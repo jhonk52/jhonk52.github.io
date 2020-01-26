@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+body {
+	background: var(--fondo);
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	margin-top: 40px;
+	padding-top:10px;
+	border-top: 1px solid var(--grislinea);
+	width: 100%;
+}
+
+/************************ MENU ********************************/
+
+nav {
+	float:left;
+	vertical-align: top;
+	width: 33.3%;
+}
+
+figure{
+
+	display: flex;
+	justify-content: center;
+	margin-top: 0;
+}
+
+img {
+	border-radius: 50%;
+	width: 80%;
+	max-width: 300px;
+	margin: 0 auto;
+	border:2px solid var(--grislinea);
+}
+
+ul {
+	padding: 0;
+	width: 55%;
+	margin: 40px auto 0 auto;
+	border:1px solid var(--grislinea);
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+
+li{
+	list-style: none;
+	text-align: center;
+	width: 90%;
+	margin:0 auto 3%;
+	border:1px solid var(--fondo);
+	border-radius: 7px;
+	box-sizing: border-box;
+	overflow:hidden;
+}
+
+li:first-child{
+	margin-top: 3%;
+}
+
+li label{
+	width: 100%;
+	display: block;
+	padding: 5% 0;
+	color:var(--letra);
+	transition: background 0.5s ease;
+}
+
+li label:hover{
+	background-color: black;
+	color :white;
+}
+
+li:hover{
+	border:1px solid black;
+	border-radius: 7px;
+}
+
+#item1:checked + #acercademi{
+	display: block;
+}
+
+#item2:checked + #misproyectos{
+	display: block;
+}
+
+#item3:checked + #experiencias{
+	display: block;
+}
+
+/******************** CONTENIDO *************************/
+
+
+section {
+	width: 66.6%;
+	max-width: 600px;
+	float: left;
+}
+
+article{
+	width: 90%;
+}
+
+/******************* TEXTO ***********************/
+
+a:visited, a:link{
+	color: var(--letra);
+}
+
+p, h1 {
+	color: var(--letra);
+	margin:0 0 1em 0;
+	width: auto;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+    font-size:18px;
+}
+
+h1,label{
+	font-family: 'Roboto Mono', monospace;
+}
+
+h1{
+	font-size: 24px;
+}
+
+h2{
+	color: var(--letra);
+	font-size: 20px;
+	margin: 0 auto;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+}
+
+a {
+	color: var(--enlaces);
+}
+
+ a:link, a:visited{
+	color: var(--enlaces);
+}
+
+a:hover{
+	color:var(--enlaceseleccionado);
+}
+
+
+#misproyectos,#experiencias,#acercademi,#item1,#item2,#item3 {
+	display: none;
+}
+
+
+/************* VARIABLES DE COLOR **************/
+:root {
+	--fondo: #1d1f21;
+	--letra: #c5c8c6;
+	--enlaces:#81a2be;
+	--enlaceseleccionado: #c66;
+	--grislinea:#373b41;
+}
+
+
+/*********** TAMAÑO MOVIL ****************/
+
+
+@media only screen and (max-width: 600px){	
+	nav{
+		width: 100%;
+	}
+
+	ul {
+		display:none;
+	}
+	section{
+		float: none;
+		width: 100%;
+	}
+
+	figure{
+		float:none;
+	}
+
+	article{
+		margin:0 auto;
+	}
+	
+	#misproyectos,#experiencias,#acercademi{
+		display: block;
+
+	}
